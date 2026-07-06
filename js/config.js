@@ -95,7 +95,7 @@ const CF_CONFIG = {
       category: "Economy",
       frameworks: ["QBCore", "QBox", "ESX"],
       badges: [{ label: "Popular", type: "success" }],
-      image: null,
+      image: '../img/cf-drugs2.jpg',
       checkoutLink: "https://core-forge.tebex.io/package/7497769",
     },
     {
