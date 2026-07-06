@@ -1,0 +1,37 @@
+site_name: Core-Forge Documentation
+site_description: Premium FiveM Scripts for QBCore, QBox & ESX
+site_url: https://core-forge-5.github.io/cf-docs/
+repo_name: Core-Forge-5/cf-docs
+repo_url: https://github.com/Core-Forge-5/cf-docs
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: teal
+      accent: lime
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - toc.follow
+
+plugins:
+  - search
+  - git-revision-date-localized
+
+nav:
+  - Home: index.md
+  - Scripts:
+    - coreforge-drugs.md
+    - core-injuries.md
+    # - core-gruppe6.md
+    # - cf-outfitbag.md
+    # - core-fuel.md
+    - core-consumables.md
+    - core-billing.md
+    - core-crutches.md
+  - Getting Started: getting-started.md

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="page-title">Script — Core-Forge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<nav class="nav" id="cf-nav"></nav>
+
+<section class="section--tight" style="padding-top: var(--spacing-16);">
+  <div class="container" id="script-container">
+    <div class="skeleton" style="height:400px; border-radius: var(--radius-lg);"></div>
+  </div>
+</section>
+
+<footer class="footer" id="cf-footer"></footer>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script>
+  cfRenderNav("scripts");
+  cfRenderFooter();
+
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name);
+  }
+
+  function renderNotFound() {
+    document.getElementById("script-container").innerHTML = `
+      <div class="empty-state">
+        <h3>Script not found</h3>
+        <p>This resource may have been renamed or removed.</p>
+        <a href="scripts.html" class="btn btn--primary" style="margin-top: var(--spacing-6);">Back to Catalog</a>
+      </div>`;
+  }
+
+  function renderScript(script) {
+    document.getElementById("page-title").textContent = `${script.name} — Core-Forge`;
+
+    const media = script.image
+      ? `<img src="${script.image}" alt="${script.name}" />`
+      : `<div class="script-card__media-fallback" style="height:100%;">${script.name}</div>`;
+
+    document.getElementById("script-container").innerHTML = `
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> / <a href="scripts.html">Scripts</a> / <span>${script.name}</span>
+      </div>
+
+      <div class="detail-layout">
+        <div>
+          <div class="detail-gallery">
+            <div class="detail-gallery__main">${media}</div>
+          </div>
+
+          <div class="detail-body">
+            <div>
+              <h2>Overview</h2>
+              <p>${script.description}</p>
+            </div>
+            <div>
+              <h2>Compatibility</h2>
+              <ul>
+                ${script.frameworks.map((f) => `<li>${f} — full bridge support, auto-detected on resource start</li>`).join("")}
+                <li>ox_lib &amp; oxmysql required as base dependencies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <aside class="detail-sidebar">
+          <div>
+            <div class="tag" style="margin-bottom: var(--spacing-3); display:inline-block;">${script.category}</div>
+            <h1 style="font-size:1.6rem;">${script.name}</h1>
+            <p style="margin-top:8px; font-size:0.9rem;">${script.tagline}</p>
+          </div>
+
+          <div class="detail-sidebar__price">
+            $${script.price.toFixed(2)} <small>${script.currency}</small>
+          </div>
+
+          <a href="#" id="checkout-link" target="_blank" rel="noopener" class="btn btn--primary btn--block btn--lg">
+            Buy Now
+          </a>
+          <a href="${CF_CONFIG.BRAND.discord}" target="_blank" rel="noopener" class="btn btn--ghost btn--block">
+            Ask a Question on Discord
+          </a>
+
+          <div class="detail-sidebar__meta">
+            <div class="meta-row">
+              <span class="meta-row__label">Frameworks</span>
+              <span class="meta-row__value">${script.frameworks.join(", ") || "—"}</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-row__label">Category</span>
+              <span class="meta-row__value">${script.category}</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-row__label">Delivery</span>
+              <span class="meta-row__value">Instant / Keymaster</span>
+            </div>
+          </div>
+
+          ${script.badges.length ? `<div style="display:flex; gap:8px; flex-wrap:wrap;">${script.badges.map(cfBadgeHtml).join("")}</div>` : ""}
+        </aside>
+      </div>
+    `;
+
+    document.getElementById("checkout-link").href = cfCheckoutUrl(script);
+  }
+
+  const id = getParam("id");
+
+  cfGetScripts().then((scripts) => {
+    const script = scripts.find((s) => s.id === id);
+    if (!script) {
+      renderNotFound();
+      return;
+    }
+    renderScript(script);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scripts — Core-Forge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<nav class="nav" id="cf-nav"></nav>
+
+<section class="section--tight" style="padding-top: var(--spacing-16);">
+  <div class="container">
+    <div class="section__header" style="margin-bottom: var(--spacing-8);">
+      <span class="section__eyebrow">Catalog</span>
+      <h1 class="section__title">All Scripts</h1>
+      <p class="section__subtitle">Browse the full Core-Forge resource catalog. Filter by category or framework.</p>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-bar__search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" placeholder="Search scripts..." />
+      </div>
+      <div class="filter-bar__tags" id="category-filters"></div>
+    </div>
+
+    <div class="grid grid--scripts" id="scripts-grid">
+      <div class="skeleton" style="height:320px;"></div>
+      <div class="skeleton" style="height:320px;"></div>
+      <div class="skeleton" style="height:320px;"></div>
+      <div class="skeleton" style="height:320px;"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="cf-footer"></footer>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script>
+  cfRenderNav("scripts");
+  cfRenderFooter();
+
+  let ALL_SCRIPTS = [];
+  let activeCategory = "All";
+
+  function renderGrid() {
+    const query = document.getElementById("search-input").value.toLowerCase().trim();
+    const filtered = ALL_SCRIPTS.filter((s) => {
+      const matchesCategory = activeCategory === "All" || s.category === activeCategory;
+      const matchesQuery = !query ||
+        s.name.toLowerCase().includes(query) ||
+        s.tagline.toLowerCase().includes(query) ||
+        s.category.toLowerCase().includes(query);
+      return matchesCategory && matchesQuery;
+    });
+
+    const grid = document.getElementById("scripts-grid");
+    if (filtered.length === 0) {
+      grid.innerHTML = `
+        <div class="empty-state" style="grid-column: 1/-1;">
+          <h3>No scripts found</h3>
+          <p>Try a different search term or category.</p>
+        </div>`;
+      return;
+    }
+    grid.innerHTML = filtered.map(cfScriptCardHtml).join("");
+  }
+
+  function renderFilters() {
+    const categories = ["All", ...new Set(ALL_SCRIPTS.map((s) => s.category))];
+    const container = document.getElementById("category-filters");
+    container.innerHTML = categories
+      .map((c) => `<button class="filter-chip ${c === activeCategory ? "is-active" : ""}" data-category="${c}">${c}</button>`)
+      .join("");
+
+    container.querySelectorAll(".filter-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        activeCategory = chip.dataset.category;
+        renderFilters();
+        renderGrid();
+      });
+    });
+  }
+
+  document.getElementById("search-input").addEventListener("input", renderGrid);
+
+  cfGetScripts().then((scripts) => {
+    ALL_SCRIPTS = scripts;
+    renderFilters();
+    renderGrid();
+  });
+</script>
+
+</body>
+</html>

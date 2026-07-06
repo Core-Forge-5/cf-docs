@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Core-Forge — Commercial FiveM Scripts</title>
+<meta name="description" content="Commercial FiveM scripting for QBCore, QBox, and ESX. HUDs, jobs, economy systems, and more — built to spec." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<nav class="nav" id="cf-nav"></nav>
+
+<header class="hero">
+  <div class="container">
+    <h1 class="hero__title">FiveM scripts built like <span>production software</span>.</h1>
+    <p class="hero__subtitle">
+      Core-Forge is a commercial FiveM scripting studio. We build HUDs, jobs, economy
+      systems, and gameplay resources with the same rigor as real software teams —
+      architected, tested, and documented.
+    </p>
+    <div class="hero__actions">
+      <a href="scripts.html" class="btn btn--primary btn--lg">Browse Scripts</a>
+      <a href="https://discord.gg/TBb4QKHQtm" target="_blank" rel="noopener" class="btn btn--ghost btn--lg">Join Discord</a>
+    </div>
+    <div class="hero__stats">
+      <div class="stat">
+        <span class="stat__value" id="stat-scripts">9+</span>
+        <span class="stat__label">Live Scripts</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value">3</span>
+        <span class="stat__label">Frameworks Supported</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow">Why Core-Forge</span>
+      <h2 class="section__title">Built different, built to last.</h2>
+      <p class="section__subtitle">Every resource ships with a consistent design language, framework-agnostic bridges, and real engineering practices behind it.</p>
+    </div>
+    <div class="grid grid--3">
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="feature__title">Multi-Framework</div>
+        <div class="feature__desc">Every script auto-detects and bridges cleanly across QBCore, QBox, and ESX — no need to download the right version for your framework.</div>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
+        <div class="feature__title">Consistent Design System</div>
+        <div class="feature__desc">Every NUI feels like part of one cohesive product suite.</div>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="feature__title">Documented & Supported</div>
+        <div class="feature__desc">Full documentation, setup guide, changelogs, and an active Discord for setup help and bug reports.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow">Catalog Preview</span>
+      <h2 class="section__title">Featured scripts</h2>
+      <p class="section__subtitle">A snapshot of the full Core-Forge catalog. See everything on the scripts page.</p>
+    </div>
+    <div class="grid grid--scripts" id="featured-scripts">
+      <div class="skeleton" style="height:320px;"></div>
+      <div class="skeleton" style="height:320px;"></div>
+      <div class="skeleton" style="height:320px;"></div>
+    </div>
+    <div style="text-align:center; margin-top: var(--spacing-8);">
+      <a href="scripts.html" class="btn btn--secondary">View Full Catalog</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="cf-footer"></footer>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script>
+  cfRenderNav("home");
+  cfRenderFooter();
+
+  cfGetScripts().then((scripts) => {
+    document.getElementById("stat-scripts").textContent = `${scripts.length}+`;
+    const featured = scripts.slice(0, 3);
+    document.getElementById("featured-scripts").innerHTML = featured.map(cfScriptCardHtml).join("");
+  });
+</script>
+
+</body>
+</html>

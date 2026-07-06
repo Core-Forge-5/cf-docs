@@ -1,0 +1,1939 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Premium FiveM Scripts for QBCore, QBox & ESX">
+      
+      
+      
+        <link rel="canonical" href="https://core-forge-5.github.io/cf-docs/core-injuries/">
+      
+      
+        <link rel="prev" href="../coreforge-drugs/">
+      
+      
+        <link rel="next" href="../core-consumables/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Core-Injuries — Premium FiveM Injury System - Core-Forge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#core-injuries-premium-fivem-injury-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Core-Forge Documentation" class="md-header__button md-logo" aria-label="Core-Forge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Core-Forge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Core-Injuries — Premium FiveM Injury System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Core-Forge-5/cf-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Core-Forge-5/cf-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../coreforge-drugs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Scripts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Core-Forge Documentation" class="md-nav__button md-logo" aria-label="Core-Forge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Core-Forge Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Core-Forge-5/cf-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Core-Forge-5/cf-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scripts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coreforge-drugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core-Forge Drug Empire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core-Injuries — Premium FiveM Injury System
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core-Injuries — Premium FiveM Injury System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Download &amp; Place
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-servercfg-load-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Server.cfg Load Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configure-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configure (Required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-ox_inventory-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Add ox_inventory Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-database-if-persistence-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Database (If Persistence Enabled)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-start-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Start Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configmainlua-main-toggles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/main.lua — Main Toggles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configmainlua-framework-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/main.lua — Framework Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configmainlua-ems-commands-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/main.lua — EMS Commands &amp; Menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configinjurylua-define-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/injury.lua — Define Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configinjurylua-prop-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/injury.lua — Prop Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configknockoutlua-knockout-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/knockout.lua — Knockout Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configpersistencelua-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/persistence.lua — Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ox_inventory-items-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎒 ox_inventory Items Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎒 ox_inventory Items Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-usage-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Item Usage Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-setup-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ Database Setup (Persistence)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗄️ Database Setup (Persistence)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-create-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Create (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistence-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistence Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💬 Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ems-commands-requires-ems-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EMS Commands (Requires EMS job)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-requires-admin-permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin (Requires Admin permission)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Player Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-v1-commands-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy v1 Commands (Compatibility)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exports-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔌 Exports API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔌 Exports API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-exports-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client Exports (Lua)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-exports-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server Exports (Lua)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-consumables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core-Consumables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-billing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core-Billing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-crutches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core crutches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Download &amp; Place
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-servercfg-load-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Server.cfg Load Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configure-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configure (Required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-ox_inventory-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Add ox_inventory Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-database-if-persistence-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Database (If Persistence Enabled)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-start-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Start Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configmainlua-main-toggles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/main.lua — Main Toggles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configmainlua-framework-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/main.lua — Framework Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configmainlua-ems-commands-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/main.lua — EMS Commands &amp; Menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configinjurylua-define-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/injury.lua — Define Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configinjurylua-prop-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/injury.lua — Prop Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configknockoutlua-knockout-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/knockout.lua — Knockout Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configpersistencelua-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config/persistence.lua — Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ox_inventory-items-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎒 ox_inventory Items Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎒 ox_inventory Items Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-usage-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Item Usage Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-setup-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ Database Setup (Persistence)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗄️ Database Setup (Persistence)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-create-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Create (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistence-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistence Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💬 Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ems-commands-requires-ems-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EMS Commands (Requires EMS job)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-requires-admin-permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin (Requires Admin permission)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Player Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-v1-commands-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy v1 Commands (Compatibility)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exports-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔌 Exports API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔌 Exports API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-exports-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client Exports (Lua)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-exports-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server Exports (Lua)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="core-injuries-premium-fivem-injury-system">Core-Injuries  — Premium FiveM Injury System</h1>
+<h2 id="requirements">📦 Requirements</h2>
+<table>
+<thead>
+<tr>
+<th>Dependency</th>
+<th>Minimum Version</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FiveM Server Artifacts</strong></td>
+<td>3095+ (June 2024)</td>
+<td>Statebags, modern natives</td>
+</tr>
+<tr>
+<td><strong>ox_lib</strong></td>
+<td>v3.28.0+</td>
+<td>Notifications, context menus, callbacks, commands</td>
+</tr>
+<tr>
+<td><strong>ox_inventory</strong></td>
+<td>Latest</td>
+<td>Crutch/wheelchair/armsling usable items</td>
+</tr>
+<tr>
+<td><strong>oxmysql</strong></td>
+<td>Latest</td>
+<td><strong>Optional</strong> — only for persistence feature</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>oxmysql is optional</strong> — disable <code>Config.Persistence.Enabled = false</code> if not using.</p>
+</blockquote>
+<hr />
+<h2 id="installation">🚀 Installation</h2>
+<h3 id="1-download-place">1. Download &amp; Place</h3>
+<pre><code class="language-bash"># Place in your resources directory
+/resources/[core]/core-injuries/
+</code></pre>
+<p>Download <a href="https://github.com/Core-Forge-5/cf-wheelchair">core-wheelchair</a>
+Place in same folder.</p>
+<h3 id="2-servercfg-load-order">2. Server.cfg Load Order</h3>
+<pre><code class="language-cfg">ensure ox_lib
+ensure ox_inventory
+ensure oxmysql          # Only if using persistence
+ensure core-injuries
+</code></pre>
+<h3 id="3-configure-required">3. Configure (Required)</h3>
+<p>Edit files in <code>config/</code> — all are <strong>unescrow'd and fully editable</strong>:</p>
+<pre><code class="language-bash">config/
+├── ems.lua             # EMS commands, menu settings
+├── knockout.lua        # Knockout thresholds
+├── main.lua            # Main toggles | Job names, framework override
+├── persistence.lua     # Database settings
+└── injury.lua          # Injury tier definitions | Prop models, bones, offsets
+
+</code></pre>
+<h3 id="4-add-ox_inventory-items">4. Add ox_inventory Items</h3>
+<p>Add to your <code>ox_inventory/data/items.lua</code>:</p>
+<pre><code class="language-lua">['crutch'] = {
+    label = 'Crutch',
+    weight = 1500,
+    stack = false,
+    close = true,
+    description = 'A medical crutch for walking assistance'
+},
+</code></pre>
+<h3 id="5-database-if-persistence-enabled">5. Database (If Persistence Enabled)</h3>
+<pre><code class="language-sql">-- Run database/schema.sql manually, or enable AutoCreateTable in config/persistence.
+-- Then restart once if using Auto Create
+-- Table: core_crutches_injuries
+</code></pre>
+<h3 id="6-start-server">6. Start Server</h3>
+<pre><code class="language-bash"># Check console for:
+# [core-injuries] Framework bridge: QBox (or QBCore/ESX/Standalone)
+# [core-injuries] Version check: Latest version .x.x
+</code></pre>
+<hr />
+<h2 id="configuration">⚙️ Configuration</h2>
+<p>All configuration files are in <code>config/</code> and <strong>unescrow'd</strong> — modify freely without touching encrypted core logic.</p>
+<h3 id="configmainlua-main-toggles">config/main.lua — Main Toggles</h3>
+<pre><code class="language-lua">Config.Enabled = true
+Config.Debug = false
+Config.DefaultTier = &quot;minor&quot;
+
+Config.Features = {
+    InjuryTiers = true,      -- Enable tier system
+    Knockout = true,         -- Enable knockout mechanics
+    Persistence = false,     -- Requires oxmysql
+    EMSMenu = true,          -- Enable EMS context menu
+    Commands = true,         -- Enable all commands
+    LegacyCompat = true,     -- v1 event/command compatibility
+    SkinReloadWatch = true,  -- Re-apply props on clothing change
+    PropValidation = true    -- Periodic prop re-attachment check
+}
+</code></pre>
+<h3 id="configmainlua-framework-overrides">config/main.lua — Framework Overrides</h3>
+<pre><code class="language-lua">Config.Framework = {
+    ForceFramework = nil,     -- nil=auto, or &quot;qbox&quot;/&quot;qbcore&quot;/&quot;esx&quot;/&quot;standalone&quot;
+    EMSJobName = &quot;ambulance&quot;,
+    AdminPermission = &quot;admin&quot;
+}
+</code></pre>
+<h3 id="configmainlua-ems-commands-menu">config/main.lua — EMS Commands &amp; Menu</h3>
+<pre><code class="language-lua">Config.EMS = {
+    Commands = {
+        ApplyInjury = &quot;emsinjury&quot;,
+        Heal = &quot;emsheal&quot;,
+        Menu = &quot;emsmenu&quot;
+    },
+    ContextMenu = {
+        Enabled = true,
+        Title = &quot;EMS Injury Management&quot;,
+        Icon = &quot;fa-solid fa-user-injured&quot;
+    },
+    DurationBounds = {
+        minor = { min = 5, max = 30 },
+        moderate = { min = 15, max = 60 },
+        severe = { min = 30, max = 120 },
+        wheelchair = { min = 60, max = 240 },
+        armsling = { min = 10, max = 60 }
+    },
+    AllowCustomDuration = true,
+    InteractionRange = 3.0
+}
+</code></pre>
+<h3 id="configinjurylua-define-tiers">config/injury.lua — Define Tiers</h3>
+<pre><code class="language-lua">Config.Tiers = {
+    minor = {
+        Label = &quot;Minor Injury&quot;,
+        ClipSet = &quot;move_lester_CaneUp&quot;,
+        Prop = &quot;crutch&quot;,
+        RequiredItem = &quot;crutch&quot;,
+        MovementPenalty = { Sprint = true, Jump = true, WalkSpeed = 0.8 },
+        MinDuration = 5, MaxDuration = 15, DefaultDuration = 5,
+        CanSelfRemove = true
+    },
+    -- moderate, severe, wheelchair, armsling...
+}
+</code></pre>
+<h3 id="configinjurylua-prop-definitions">config/injury.lua — Prop Definitions</h3>
+<pre><code class="language-lua">Config.Props = {
+    crutch = {
+        Model = `v_med_crutch01`,
+        Bone = &quot;SKEL_R_Hand&quot;,
+        Offsets = { x = 1.18, y = -0.36, z = -0.20, rotX = -20.0, rotY = -87.0, rotZ = -20.0 },
+        Collision = false, Scale = 1.0
+    }
+}
+</code></pre>
+<h3 id="configknockoutlua-knockout-settings">config/knockout.lua — Knockout Settings</h3>
+<pre><code class="language-lua">Config.Knockout = {
+    Enabled = true,
+    MeleeEnabled = true,
+    MeleeHealthThreshold = 155,
+    WeaponEnabled = true,
+    WeaponDamageThreshold = 35,
+    Duration = 5500,          -- ms unconscious
+    Regeneration = 2,         -- HP per tick
+    RegenInterval = 450,      -- ms per tick
+    Cooldown = 30000,         -- ms before re-knockout
+    PostKnockoutTier = &quot;minor&quot;,
+    PostKnockoutDuration = nil  -- nil = tier default
+}
+</code></pre>
+<h3 id="configpersistencelua-database">config/persistence.lua — Database</h3>
+<pre><code class="language-lua">Config.Persistence = {
+    Enabled = false,
+    TableName = &quot;core_crutches_injuries&quot;,
+    AutoCreateTable = true,
+    LoadOnStart = true,
+    SyncInterval = 30000,     -- ms between DB flushes
+    CleanupInterval = 300000  -- ms between expired row cleanup
+}
+</code></pre>
+<hr />
+<h2 id="ox_inventory-items-setup">🎒 ox_inventory Items Setup</h2>
+<p>The system requires <strong>usable items</strong> in ox_inventory. Each tier's <code>RequiredItem</code> must exist in your items.lua.</p>
+<h3 id="required-items">Required Items</h3>
+<table>
+<thead>
+<tr>
+<th>Item Name</th>
+<th>Used By Tiers</th>
+<th>Type</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>crutch</code></td>
+<td>minor, moderate, severe</td>
+<td>Usable</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="item-usage-flow">Item Usage Flow</h3>
+<ol>
+<li>Player has active injury requiring specific item</li>
+<li>Player uses item from inventory (right-click → Use)</li>
+<li>Client calls <code>exports['core-injuries']:UseCrutch()</code></li>
+<li>Server validates: injury active + item count ≥ 1 + tier matches item</li>
+<li>Server removes 1 item, clears injury, syncs to client</li>
+</ol>
+<blockquote>
+<p>💡 <strong>Tip</strong>: Configure <code>CanSelfRemove = false</code> on severe/wheelchair tiers to force EMS interaction.</p>
+</blockquote>
+<hr />
+<h2 id="database-setup-persistence">🗄️ Database Setup (Persistence)</h2>
+<h3 id="auto-create-recommended">Auto-Create (Recommended)</h3>
+<p>Enable in <code>config/persistence.lua</code>:</p>
+<pre><code class="language-lua">Config.Persistence = {
+    Enabled = true,
+    AutoCreateTable = true,  -- Creates table on resource start
+    -- ...
+}
+</code></pre>
+<h3 id="manual-schema">Manual Schema</h3>
+<p>Run <code>database/schema.sql</code>:</p>
+<pre><code class="language-sql">CREATE TABLE `core_crutches_injuries` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `identifier` VARCHAR(60) NOT NULL,
+    `tier` VARCHAR(32) NOT NULL,
+    `expiry` BIGINT NOT NULL,
+    `source` VARCHAR(16) NOT NULL,
+    `custom_duration` BOOLEAN DEFAULT FALSE,
+    `cleared_by` VARCHAR(32) DEFAULT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY `unique_player` (`identifier`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+</code></pre>
+<h3 id="persistence-behavior">Persistence Behavior</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Database Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Injury Applied</td>
+<td>Saved to DB</td>
+</tr>
+<tr>
+<td>Injury Cleared</td>
+<td>Deleted from DB</td>
+</tr>
+<tr>
+<td>Server Start</td>
+<td>Restores active injuries</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="commands">💬 Commands</h2>
+<h3 id="ems-commands-requires-ems-job">EMS Commands (Requires EMS job)</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/emsinjury</code></td>
+<td><code>/emsinjury &lt;id&gt; &lt;tier&gt; [minutes]</code></td>
+<td>Apply injury to player</td>
+</tr>
+<tr>
+<td><code>/emsheal</code></td>
+<td><code>/emsheal &lt;id&gt;</code></td>
+<td>Clear player's injury</td>
+</tr>
+<tr>
+<td><code>/emsmenu</code></td>
+<td><code>/emsmenu</code></td>
+<td>Open proximity context menu</td>
+</tr>
+</tbody>
+</table>
+<h3 id="admin-requires-admin-permission">Admin (Requires Admin permission)</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/admininjury</code></td>
+<td><code>/admininjury &lt;id&gt; &lt;tier&gt; [minutes]</code></td>
+<td>Apply injury (bypasses EMS check)</td>
+</tr>
+<tr>
+<td><code>/adminheal</code></td>
+<td><code>/adminheal &lt;id&gt;</code></td>
+<td>Clear injury (bypasses EMS check)</td>
+</tr>
+<tr>
+<td><code>/knockout</code></td>
+<td><code>/knockout &lt;id&gt; [duration]</code></td>
+<td>Force knockout on player</td>
+</tr>
+</tbody>
+</table>
+<h3 id="player-commands">Player Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/injury</code></td>
+<td><code>/injury</code></td>
+<td>Check your injury status &amp; time remaining</td>
+</tr>
+<tr>
+<td><code>/crutchtime</code></td>
+<td><code>/crutchtime</code></td>
+<td>Legacy v1 — check remaining time</td>
+</tr>
+</tbody>
+</table>
+<h3 id="legacy-v1-commands-compatibility">Legacy v1 Commands (Compatibility)</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Syntax</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/applycrutch</code></td>
+<td><code>/applycrutch [id] [minutes]</code></td>
+<td>Applies "minor" tier</td>
+</tr>
+<tr>
+<td><code>/crutchtime</code></td>
+<td><code>/crutchtime</code></td>
+<td>Shows remaining time</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="exports-api">🔌 Exports API</h2>
+<h3 id="client-exports-lua">Client Exports (Lua)</h3>
+<pre><code class="language-lua">-- Check if player has ANY injury tier active
+local isInjured = exports['core-injuries']:IsInjured()
+-- Returns: boolean
+
+-- Get current injury tier name
+local tier = exports['core-injuries']:GetInjuryTier()
+-- Returns: string|nil (&quot;minor&quot;, &quot;moderate&quot;, &quot;severe&quot;, &quot;wheelchair&quot;, &quot;armsling&quot;)
+
+-- Get remaining time in seconds
+local seconds = exports['core-injuries']:GetRemainingTime()
+-- Returns: number|nil
+
+-- Get injury source (&quot;ems&quot;, &quot;admin&quot;, &quot;knockout&quot;, &quot;command&quot;)
+local source = exports['core-injuries']:GetInjurySource()
+-- Returns: string|nil
+
+-- Set injury VISUALLY ONLY (no server sync) — for cutscenes, scenes
+local success = exports['core-injuries']:SetInjuryTier(&quot;moderate&quot;)
+-- Returns: boolean
+
+-- Clear injury VISUALLY ONLY (no server sync)
+local success = exports['core-injuries']:ClearInjury()
+-- Returns: boolean
+
+-- Attempt to use crutch item from inventory (triggers server validation)
+local success = exports['core-injuries']:UseCrutch()
+-- Returns: boolean
+
+-- Force re-apply visuals (prop + clipset) — useful after clothing change
+exports['core-injuries']:ReapplyInjuryVisuals()
+-- Returns: void
+</code></pre>
+<h3 id="server-exports-lua">Server Exports (Lua)</h3>
+<pre><code class="language-lua">-- Apply injury to player (REPLACES existing injury — tier transition)
+-- @param src number - Player server ID
+-- @param tier string - Tier key from Config.Tiers
+-- @param minutes number|nil - Duration in minutes (nil = tier default, clamped to min/max)
+-- @return boolean, string - success, errorMessage
+local success, err = exports['core-injuries']:ApplyInjury(src, &quot;moderate&quot;, 30)
+
+-- Clear injury from player
+-- @param src number - Player server ID
+-- @param clearedBy string|nil - &quot;ems_cleared&quot;, &quot;expired&quot;, &quot;self_removed&quot;, &quot;crutch_used&quot;
+-- @return boolean, string - success, errorMessage
+local success, err = exports['core-injuries']:ClearInjury(src, &quot;ems_cleared&quot;)
+
+-- Get full injury data for player
+-- @param src number - Player server ID
+-- @return table|nil - { tier, expiry, source, customDuration, clearedBy } or nil
+local injury = exports['core-injuries']:GetInjury(src)
+
+-- Check if player has active injury
+-- @param src number - Player server ID
+-- @return boolean
+local isInjured = exports['core-injuries']:IsInjured(src)
+
+-- Get remaining time in seconds
+-- @param src number - Player server ID
+-- @return number|nil - Seconds remaining or nil if not injured
+local seconds = exports['core-injuries']:GetRemainingTime(src)
+</code></pre>
+<hr />
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2026 18:54:39 UTC">July 6, 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
