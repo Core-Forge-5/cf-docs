@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://core-forge-5.github.io/cf-docs/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://core-forge-5.github.io/cf-docs/cf-outfitbag/</loc>
+         <lastmod>2026-07-10</lastmod>
     </url>
     <url>
          <loc>https://core-forge-5.github.io/cf-docs/core-billing/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <lastmod>2026-07-10</lastmod>
     </url>
     <url>
          <loc>https://core-forge-5.github.io/cf-docs/core-consumables/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <lastmod>2026-07-10</lastmod>
     </url>
     <url>
          <loc>https://core-forge-5.github.io/cf-docs/core-crutches/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <lastmod>2026-07-10</lastmod>
     </url>
     <url>
          <loc>https://core-forge-5.github.io/cf-docs/core-injuries/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <lastmod>2026-07-10</lastmod>
     </url>
     <url>
          <loc>https://core-forge-5.github.io/cf-docs/coreforge-drugs/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <lastmod>2026-07-10</lastmod>
     </url>
     <url>
          <loc>https://core-forge-5.github.io/cf-docs/getting-started/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <lastmod>2026-07-10</lastmod>
     </url>
 </urlset>
